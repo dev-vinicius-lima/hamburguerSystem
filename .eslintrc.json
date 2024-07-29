@@ -1,0 +1,8 @@
+{
+  "extends": "@rocketseat/eslint-config/node",
+  "rules": {
+    "no-console": "off",
+    "no-unused-vars": "warn",
+    "semi": "off"
+  }
+}
