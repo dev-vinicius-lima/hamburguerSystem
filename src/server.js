@@ -1,13 +1,15 @@
-import app from '../src/app.js'
-import connection from '../src/config/database.js'
+import app from './app.js'
+import database from './config/database.cjs'
+import { Sequelize } from 'sequelize'
 
+const connection = new Sequelize(database)
 connection
 	.authenticate()
 	.then(() => {
 		console.log('Connection has been established successfully.')
 	})
-	.catch((err) => {
-		console.error('Unable to connect to the database:', err)
+	.catch((error) => {
+		console.error('Unable to connect to the database:', error)
 	})
 
 app.listen(3333, () => {

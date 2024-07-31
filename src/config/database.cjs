@@ -4,6 +4,7 @@ module.exports = {
 	username: 'postgres',
 	password: 'postgres',
 	database: 'burgerSystem',
+	logging: false,
 	define: {
 		timestamps: true,
 		underscored: true,
