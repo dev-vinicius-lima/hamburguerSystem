@@ -10,6 +10,7 @@ const models = [User, Product, Category]
 class Database {
 	constructor() {
 		this.init()
+		this.mongo()
 	}
 
 	init() {
@@ -24,13 +25,10 @@ class Database {
 	}
 
 	mongo() {
-		this.mongoConnection = mongoose.connect(
-			'mongodb://localhost:27017/burgerSystem',
-			{
-				useNewUrlParser: true,
-				useUnifiedTopology: true,
-			},
-		)
+		this.mongoConnection = mongoose
+			.connect('mongodb://localhost:27017/burgerSystem')
+			.then(() => console.log('MongoDB Connected'))
+			.catch((err) => console.log(err))
 	}
 }
 
