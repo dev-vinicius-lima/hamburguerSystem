@@ -1,7 +1,9 @@
 import express from 'express'
 import routes from './routes.js'
 import { dirname, resolve } from 'path'
+import cors from 'cors'
 import { fileURLToPath } from 'url'
+
 import './database/index.js'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -11,6 +13,7 @@ class App {
 		this.app = express()
 		this.middlewares()
 		this.routes()
+		this.app.use(cors())
 	}
 
 	middlewares() {
