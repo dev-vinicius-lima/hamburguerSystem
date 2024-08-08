@@ -20,8 +20,8 @@ class CategoryController {
 		}
 
 		const { name } = req.body
-		const { fileName: path } = req.file
-
+		const { filename: path } = req.file
+		console.log(path)
 		const categoryExists = await Category.findOne({ where: { name } })
 		if (categoryExists) {
 			return res.status(400).json({ message: 'Category already exists' })
