@@ -71,7 +71,14 @@ class OrderController {
 		const schema = Yup.object().shape({
 			status: Yup.string()
 				.required()
-				.oneOf(['pendente', 'processando', 'entregue', 'cancelado']),
+				.oneOf([
+					'Pedido realizado',
+					'Em preparação',
+					'Pedido Pronto',
+					'Pedido à caminho',
+					'entregue',
+					'cancelado',
+				]),
 		})
 
 		try {
